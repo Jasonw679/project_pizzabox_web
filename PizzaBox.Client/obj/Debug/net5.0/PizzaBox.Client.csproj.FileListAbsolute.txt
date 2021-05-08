@@ -39,3 +39,15 @@
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.pdb
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.genruntimeconfig.cache
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/_ViewImports.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Checkout.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Npgsql.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Order.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Humanizer.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Pizza/Pizza.cshtml.g.cs

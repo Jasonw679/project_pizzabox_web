@@ -1,0 +1,14 @@
+<h2>Thank you for a Order</h2>
+@foreach (var item in ViewBag.Order.Pizzas)
+{
+  <p>Crust: @item.Crust</p>
+  <p>Size: @item.Size</p>
+  <p>Toppings:</p>
+  <ul>
+  @foreach (var topping in item.Toppings)
+    {
+      <li>@topping</li>
+    }
+  </ul>
+}
+<a href="/home">Home</a>

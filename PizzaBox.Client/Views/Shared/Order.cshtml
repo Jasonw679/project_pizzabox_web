@@ -1,0 +1,40 @@
+@model PizzaBox.Client.Models.OrderViewModel;
+<form action="/checkout" method="post">
+  @Html.AntiForgeryToken()
+  <fieldset>
+    <legend>Select a Crust</legend>
+    @Html.ValidationMessageFor(m => m.SelectedCrust)
+    @foreach (var item in Model.Crusts)
+    {
+      <div class="form-check">
+        <label>@item</label>
+        <input class="form-type-input" type="radio" asp-for="SelectedCrust" value=@item>
+      </div>
+    }
+  </fieldset>
+
+  <fieldset>
+    <legend>Select a Size</legend>
+    @Html.ValidationMessageFor(m => m.SelectedSize)
+    @foreach (var item in Model.Sizes)
+    {
+      <div class="form-check">
+        <label>@item</label>
+        <input class="form-type-input" type="radio" id=@item asp-for="SelectedSize" value=@item>
+      </div>
+    }
+  </fieldset>
+
+  <fieldset>
+    <legend>Select Toppings (choose 2 to 5 toppings)</legend>
+    @Html.ValidationMessageFor(m => m.SelectedToppings)
+    @foreach (var item in Model.Toppings)
+    {
+      <div class="form-check">
+        <label>@item</label>
+        <input class="form-type-input" type="checkbox" id=@item name="SelectedToppings" value=@item>
+      </div>
+    }
+  </fieldset>
+  <button type="submit">Place Order</button>
+</form>
