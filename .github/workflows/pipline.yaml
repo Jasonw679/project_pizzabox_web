@@ -55,5 +55,4 @@ jobs:
           images: jasonw679/pizzabox
 
 name: ci-pipeline
-
 on: push
