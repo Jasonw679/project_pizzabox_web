@@ -26,37 +26,37 @@ jobs:
        - run: dotnet build
        - run: dotnet-sonarscanner end -d:sonar.login=$SONAR_TOKEN.
     
-    package:
-      env:
-        $DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-        $DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      needs:
-        - analyze
-      runs-on: ubuntu-20.04
-      steps:
-        - uses: actions/checkout@v2
-        - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
-        - run: docker image build -f Dockerfile -t pizzabox .
-        - run: docker image tag pizzabox jasonw679/pizzabox
-        - run: docker push jasonw679/pizzabox
-        - run: docker logout
+  package:
+    env:
+      $DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      $DOCKER_USER: ${{ secrets.DOCKER_USER }}
+    needs:
+      - analyze
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
+      - run: docker image build -f Dockerfile -t pizzabox .
+      - run: docker image tag pizzabox jasonw679/pizzabox
+      - run: docker push jasonw679/pizzabox
+      - run: docker logout
     
-    login:
-      needs:
-        -package
-      runs-on: ubuntu-20.04
-      steps:
-        - uses: azure/login@v1
-          with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
-    deploy:
-      needs:
-        - package
-      steps:
-        - uses: azure/webapps-deploy@v2
-        - with:
-          app-name: jasonwpizzabox
-          image: jasonw679/pizzabox
+  login:
+    needs:
+      -package
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+  deploy:
+    needs:
+      - login
+    steps:
+      - uses: azure/webapps-deploy@v2
+      - with:
+        app-name: jasonwpizzabox
+        image: jasonw679/pizzabox
 
 name: ci-pipeline
 
