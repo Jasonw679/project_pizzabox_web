@@ -7,13 +7,13 @@ namespace PizzaBox.Domain.Models
   {
     public List<Pizza> Pizzas = new List<Pizza>();
 
-    public Topping(string Name, float Price)
+    public Topping(string Name, double Price)
     {
       this.Name = Name;
       this.Price = Price;
     }
     public string Name { get; set; }
-    public float Price { get; set; }
+    public double Price { get; set; }
 
     public override string ToString()
     {

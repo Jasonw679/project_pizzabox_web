@@ -19,10 +19,6 @@ namespace PizzaBox.Domain.Models
         return computePrice();
       }
     }
-    public Pizza()
-    {
-
-    }
 
     public override string ToString()
     {

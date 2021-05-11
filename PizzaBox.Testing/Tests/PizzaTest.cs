@@ -10,7 +10,6 @@ namespace PizzaBox.Testing.Tests
     public static IEnumerable<object[]> values = new List<object[]>()
         {
             new object[] { new Pizza() },
-            new object[] { new Pizza() }
         };
     [Theory]
     [MemberData(nameof(values))]
@@ -21,8 +20,7 @@ namespace PizzaBox.Testing.Tests
     [Fact]
     public void Test_PizzaPrice()
     {
-      Assert.Equal(new Pizza().Price, 2.4);
-      Assert.Equal(new Pizza().Price, 2.45);
+      Assert.Equal(0.3, new Pizza() { Crust = new Crust("test", .2), Size = new Size("test", .1), Toppings = new List<Topping>() }.Price);
     }
   }
 }

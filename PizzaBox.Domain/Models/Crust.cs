@@ -6,13 +6,13 @@ namespace PizzaBox.Domain.Models
   public class Crust : AModel
   {
     public ICollection<Pizza> Pizzas { get; set; }
-    public Crust(string Name, float Price)
+    public Crust(string Name, double Price)
     {
       this.Name = Name;
       this.Price = Price;
     }
     public string Name { get; set; }
-    public float Price { get; set; }
+    public double Price { get; set; }
 
     public override string ToString()
     {

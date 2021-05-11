@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using PizzaBox.Domain.Models;
 using Xunit;
 
@@ -9,6 +10,7 @@ namespace PizzaBox.Testing.Tests
     public void Test_Order()
     {
       var o = new Order();
+      o.Pizzas = new List<Pizza>();
       o.Pizzas.Add(new Pizza());
       o.Pizzas.Add(new Pizza());
       o.Customer = new Customer("Test");
