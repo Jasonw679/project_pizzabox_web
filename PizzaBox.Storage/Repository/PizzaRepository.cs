@@ -20,7 +20,7 @@ namespace PizzaBox.Storing.Repository
 
     public bool Insert(Pizza entry)
     {
-      throw new NotImplementedException();
+      return _context.Pizzas.Add(entry).IsKeySet;
     }
 
     public IEnumerable<Pizza> Select(Func<Pizza, bool> filter)

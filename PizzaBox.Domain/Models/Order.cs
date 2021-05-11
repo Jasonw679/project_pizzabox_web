@@ -6,7 +6,7 @@ namespace PizzaBox.Domain.Models
   public class Order : AModel
   {
     public Store Store { get; set; }
-    public List<Pizza> Pizzas = new List<Pizza>();
+    public List<Pizza> Pizzas { get; set; }
     public Customer Customer { get; set; }
     public override string ToString()
     {
@@ -31,14 +31,6 @@ namespace PizzaBox.Domain.Models
         price += Pizzas[i].Price;
       }
       return $"{result}order in {Store}, Final Price: {price}";
-    }
-    public void PrintOrderedPizzas()
-    {
-      for (int i = 0; i < Pizzas.Count; i += 1)
-      {
-        var v = Pizzas[i];
-        System.Console.WriteLine($"{i} {v}");
-      }
     }
   }
 }

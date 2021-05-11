@@ -21,7 +21,7 @@ namespace PizzaBox.Storing.Repository
 
     public bool Insert(Size entry)
     {
-      throw new System.NotImplementedException();
+      return _context.Sizes.Add(entry).IsKeySet;
     }
 
     public System.Collections.Generic.IEnumerable<Size> Select(Func<Size, bool> filter)

@@ -1,0 +1,26 @@
+@foreach (var item in ViewBag.Orders)
+{
+  <p>Store: @item.Store</p>
+  @foreach (var pizza in item.Pizza)
+  {
+    <p>Pizza: @pizza</p>
+    <p>Crust: @pizza.Crust</p>
+    <p>Size: @pizza.Size</p>
+    <p>Toppings:</p>
+    <ul>
+  @foreach (var topping in pizza.Toppings)
+      {
+        <li>@topping</li>
+      }
+    </ul>
+  }
+}
+@if (ViewBag.Orders.Count == 0)
+{
+  <p>Your shopping cart is empty.</p>
+}
+else
+{
+  <button onclick="window.location.href='/checkout';">Place Order</button>
+}
+<button onclick="window.location.href='/pizza';">Add Pizza</button>

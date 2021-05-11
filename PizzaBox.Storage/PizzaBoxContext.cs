@@ -7,6 +7,7 @@ namespace PizzaBox.Storing
   public class PizzaBoxContext : DbContext
   {
     public DbSet<Store> Stores { get; set; }
+    public DbSet<Customer> Customers { get; set; }
     public DbSet<Crust> Crusts { get; set; }
     public DbSet<Size> Sizes { get; set; }
     public DbSet<Topping> Toppings { get; set; }
@@ -28,6 +29,13 @@ namespace PizzaBox.Storing
     }
     public void OnModelSeeding(ModelBuilder builder)
     {
+      builder.Entity<Store>().HasData(new[]
+      {
+        new Store("Pizzaria") {EntityId = 1},
+        new Store("America Pizza") {EntityId = 2},
+        new Store("DA Pizza") {EntityId = 3}
+      });
+
       builder.Entity<Crust>().HasData(new[]
       {
         new Crust("Thin", .75f) {EntityId = 1},

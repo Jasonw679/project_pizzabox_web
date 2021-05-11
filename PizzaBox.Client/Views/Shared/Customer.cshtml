@@ -1,0 +1,8 @@
+@model PizzaBox.Client.Models.OrderViewModel;
+<legend>Welcome To PizzaBox</legend>
+<form action="/home" method="post" class="row">
+  @Html.AntiForgeryToken()
+  @Html.ValidationMessageFor(m => m.SelectedCustomer)
+  <input type="text" id="SelectedCustomer" name="SelectedCustomer">
+  <button type="submit">Ok</button>
+</form>

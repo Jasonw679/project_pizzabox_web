@@ -1,0 +1,59 @@
+@model PizzaBox.Client.Models.OrderViewModel;
+<form action="/checkout" method="post">
+  @Html.AntiForgeryToken()
+  <fieldset>
+    @Html.ValidationMessageFor(m => m.SelectedCustomer)
+    <input id=@Model.SelectedCustomer name="SelectedCustomer" value=@Model.SelectedCustomer
+      hidden>@Model.SelectedCustomer</input>
+  </fieldset>
+  <fieldset>
+    @Html.ValidationMessageFor(m => m.SelectedStore)
+    <select name="SelectedStore" id="SelectedStore">
+      @foreach (var item in Model.Stores)
+      {
+        <option value=@item>@item</option>
+      }
+    </select>
+  </fieldset>
+  <legend>Choose a Pizza</legend>
+  <div class="row">
+    <div class="col">
+      <p>Create your own Pizza</p>
+      <input class="form-type-input" type="radio" asp-for="SelectedPizza" value="custom"
+        onclick="@ViewBag.custom = true">
+    </div>
+  </div>
+  <fieldset>
+    <legend>Select a Crust</legend>
+    @Html.ValidationMessageFor(m => m.SelectedCrust)
+    <select name="SelectedCrust" id="SelectedCrust">
+      @foreach (var item in Model.Crusts)
+      {
+        <option value=@item>@item</option>
+      }
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Select a Size</legend>
+    @Html.ValidationMessageFor(m => m.SelectedSize)
+    <select name="SelectedSize" id="SelectedSize">
+      @foreach (var item in Model.Sizes)
+      {
+        <option value=@item>@item</option>
+      }
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Select Toppings (choose 2 to 5 toppings)</legend>
+    @Html.ValidationMessageFor(m => m.SelectedToppings)
+    @foreach (var item in Model.Toppings)
+    {
+      <div class="form-check">
+        <label>@item</label>
+        <input class="form-type-input" type="checkbox" id=@item name="SelectedToppings" value=@item>
+      </div>
+    }
+  </fieldset>
+  <button type="submit">Select</button>
+</form>

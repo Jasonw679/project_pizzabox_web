@@ -1648,6 +1648,16 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "PizzaBox.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/PizzaBox.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaBox.Domain.dll": {}
+        }
       }
     }
   },
@@ -5611,11 +5621,17 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "PizzaBox.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PizzaBox.Domain/PizzaBox.Domain.csproj",
+      "msbuildProject": "../PizzaBox.Domain/PizzaBox.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.NET.Test.Sdk >= 16.7.1",
+      "PizzaBox.Domain >= 1.0.0",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -5627,11 +5643,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.PizzaBox.Testing/PizzaBox.PizzaBox.Testing.csproj",
-      "projectName": "PizzaBox.PizzaBox.Testing",
-      "projectPath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.PizzaBox.Testing/PizzaBox.PizzaBox.Testing.csproj",
+      "projectUniqueName": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Testing/PizzaBox.Testing.csproj",
+      "projectName": "PizzaBox.Testing",
+      "projectPath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Testing/PizzaBox.Testing.csproj",
       "packagesPath": "/home/jasonw/.nuget/packages/",
-      "outputPath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.PizzaBox.Testing/obj/",
+      "outputPath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Testing/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/jasonw/.nuget/NuGet/NuGet.Config"
@@ -5645,7 +5661,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Domain/PizzaBox.Domain.csproj": {
+              "projectPath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Domain/PizzaBox.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

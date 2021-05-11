@@ -15629,8 +15629,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Shared/Customer.cshtml",
+      "TargetPath": "Views\\Shared\\Customer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Shared/Order.cshtml",
       "TargetPath": "Views\\Shared\\Order.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Shared/ShoppingCart.cshtml",
+      "TargetPath": "Views\\Shared\\ShoppingCart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15644,13 +15654,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Pizza/Pizza.cshtml",
-      "TargetPath": "Views\\Pizza\\Pizza.cshtml",
+      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Shared/Pizza.cshtml",
+      "TargetPath": "Views\\Shared\\Pizza.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/Views/Shared/Index.cshtml",
+      "TargetPath": "Views\\Shared\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

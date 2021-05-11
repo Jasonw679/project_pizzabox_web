@@ -27,7 +27,6 @@
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.TagHelpers.input.cache
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.TagHelpers.output.cache
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.RazorCoreGenerate.cache
-/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/_ViewStart.cshtml.g.cs
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/PizzaBox.Client.RazorTargetAssemblyInfo.cache
@@ -50,4 +49,8 @@
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Order.cshtml.g.cs
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Humanizer.dll
 /home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
-/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Pizza/Pizza.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Pizza.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Customer.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/bin/Debug/net5.0/mono_crash.21acb2b632.0.json
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/ShoppingCart.cshtml.g.cs
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Client/obj/Debug/net5.0/Razor/Views/Shared/Index.cshtml.g.cs

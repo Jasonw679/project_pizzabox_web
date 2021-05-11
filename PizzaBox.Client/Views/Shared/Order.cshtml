@@ -1,40 +1,25 @@
 @model PizzaBox.Client.Models.OrderViewModel;
-<form action="/checkout" method="post">
-  @Html.AntiForgeryToken()
+<legend>Your Order History</legend>
+@foreach (var item in ViewBag.Orders)
+{
+  <p>Store: @item.Store</p>
+  @foreach (var pizza in item.Pizzas)
+  {
+    <p>Pizza: @pizza</p>
+    <p>Crust: @pizza.Crust</p>
+    <p>Size: @pizza.Size</p>
+    <p>Toppings:</p>
+    <ul>
+  @foreach (var topping in pizza.Toppings)
+      {
+        <li>@topping</li>
+      }
+    </ul>
+  }
+}
+<form action="/home">
   <fieldset>
-    <legend>Select a Crust</legend>
-    @Html.ValidationMessageFor(m => m.SelectedCrust)
-    @foreach (var item in Model.Crusts)
-    {
-      <div class="form-check">
-        <label>@item</label>
-        <input class="form-type-input" type="radio" asp-for="SelectedCrust" value=@item>
-      </div>
-    }
+    <input id=@Model.SelectedCustomer name="SelectedCustomer" value=@Model.SelectedCustomer hidden>
+    <input type="submit" value="Home">
   </fieldset>
-
-  <fieldset>
-    <legend>Select a Size</legend>
-    @Html.ValidationMessageFor(m => m.SelectedSize)
-    @foreach (var item in Model.Sizes)
-    {
-      <div class="form-check">
-        <label>@item</label>
-        <input class="form-type-input" type="radio" id=@item asp-for="SelectedSize" value=@item>
-      </div>
-    }
-  </fieldset>
-
-  <fieldset>
-    <legend>Select Toppings (choose 2 to 5 toppings)</legend>
-    @Html.ValidationMessageFor(m => m.SelectedToppings)
-    @foreach (var item in Model.Toppings)
-    {
-      <div class="form-check">
-        <label>@item</label>
-        <input class="form-type-input" type="checkbox" id=@item name="SelectedToppings" value=@item>
-      </div>
-    }
-  </fieldset>
-  <button type="submit">Place Order</button>
 </form>

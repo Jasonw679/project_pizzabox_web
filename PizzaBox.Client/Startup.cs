@@ -29,7 +29,7 @@ namespace PizzaBox.Client
       services.AddScoped<UnitOfWork>();
       services.AddDbContext<PizzaBoxContext>(option =>
       {
-        option.UseNpgsql(Configuation.GetConnectionString("pgsql"));
+        option.UseNpgsql(Configuation.GetConnectionString("pgsql"), ops => ops.EnableRetryOnFailure(3));
       });
     }
 

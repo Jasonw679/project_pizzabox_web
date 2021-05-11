@@ -1,11 +1,13 @@
 <h2>Thank you for a Order</h2>
-@foreach (var item in ViewBag.Order.Pizzas)
+<p>Store: @ViewBag.Order.Store</p>
+@foreach (var pizza in ViewBag.Order.Pizzas)
 {
-  <p>Crust: @item.Crust</p>
-  <p>Size: @item.Size</p>
+  <p>Pizza: @pizza</p>
+  <p>Crust: @pizza.Crust</p>
+  <p>Size: @pizza.Size</p>
   <p>Toppings:</p>
   <ul>
-  @foreach (var topping in item.Toppings)
+  @foreach (var topping in pizza.Toppings)
     {
       <li>@topping</li>
     }

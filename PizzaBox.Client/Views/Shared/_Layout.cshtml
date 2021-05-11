@@ -16,7 +16,22 @@
   <div class="container-fluid">
     <header class="p-3 mb-2 bg-primary text-white">
       <h1>PizzaBox</h1>
-      
+      @model PizzaBox.Client.Models.OrderViewModel;
+      @if (Model.SelectedCustomer != null)
+      {
+        <form action="/order_history">
+          <fieldset>
+            <input id=@Model.SelectedCustomer name="SelectedCustomer" value=@Model.SelectedCustomer hidden>
+            <a href="/customer" class="text-white">Change Customer</a>
+            <input type="submit" value="View Order History">
+          </fieldset>
+        </form>
+      }
+      else
+      {
+        <p>Guest</p>
+        <a href="/customer" class="text-white">New Customer</a>
+      }
     </header>
 
     <main>

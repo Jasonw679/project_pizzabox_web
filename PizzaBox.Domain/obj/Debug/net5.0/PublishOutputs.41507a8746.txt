@@ -1,0 +1,3 @@
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Domain/bin/Debug/net5.0/publish/PizzaBox.Domain.dll
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Domain/bin/Debug/net5.0/publish/PizzaBox.Domain.deps.json
+/home/jasonw/revature/project_pizzabox_web/PizzaBox.Domain/bin/Debug/net5.0/publish/PizzaBox.Domain.pdb

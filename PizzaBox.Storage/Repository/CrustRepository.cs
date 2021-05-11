@@ -27,7 +27,6 @@ namespace PizzaBox.Storing.Repository
     public IEnumerable<Crust> Select(Func<Crust, bool> filter)
     {
       return _context.Crusts.Where(filter);
-      //return new List<Crust> { new Crust("Thin", .75f), new Crust("Medium", 1.0f), new Crust("Thick", 1.25f) };
     }
 
     public Crust Update()

@@ -21,13 +21,12 @@ namespace PizzaBox.Storing.Repository
 
     public bool Insert(Topping entry)
     {
-      throw new System.NotImplementedException();
+      return _context.Toppings.Add(entry).IsKeySet;
     }
 
     public IEnumerable<Topping> Select(Func<Topping, bool> filter)
     {
       return _context.Toppings.Where(filter);
-      //return new List<Topping>() { new Topping("Cheese", .2f), new Topping("Tomato", .1f), new Topping("Pepperoni", .3f) };
     }
 
     public Topping Update()
