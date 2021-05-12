@@ -2,8 +2,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PizzaBox.Storing;
 
 namespace PizzaBox.Storage.Migrations
@@ -15,9 +15,9 @@ namespace PizzaBox.Storage.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.5")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.6")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("OrderPizza", b =>
                 {
@@ -39,13 +39,13 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("EntityId");
 
@@ -56,19 +56,19 @@ namespace PizzaBox.Storage.Migrations
                         {
                             EntityId = 1L,
                             Name = "Thin",
-                            Price = 0.75f
+                            Price = 0.75
                         },
                         new
                         {
                             EntityId = 2L,
                             Name = "Medium",
-                            Price = 1f
+                            Price = 1.0
                         },
                         new
                         {
                             EntityId = 3L,
                             Name = "Thick",
-                            Price = 1.25f
+                            Price = 1.25
                         });
                 });
 
@@ -77,10 +77,10 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EntityId");
 
@@ -92,7 +92,7 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<long?>("CustomerEntityId")
                         .HasColumnType("bigint");
@@ -114,13 +114,13 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<long?>("CrustEntityId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("SizeEntityId")
                         .HasColumnType("bigint");
@@ -139,13 +139,13 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("EntityId");
 
@@ -156,19 +156,19 @@ namespace PizzaBox.Storage.Migrations
                         {
                             EntityId = 1L,
                             Name = "Small",
-                            Price = 0.75f
+                            Price = 0.75
                         },
                         new
                         {
                             EntityId = 2L,
                             Name = "Medium",
-                            Price = 1f
+                            Price = 1.0
                         },
                         new
                         {
                             EntityId = 3L,
                             Name = "Large",
-                            Price = 1.2f
+                            Price = 1.2
                         });
                 });
 
@@ -177,10 +177,10 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EntityId");
 
@@ -209,16 +209,16 @@ namespace PizzaBox.Storage.Migrations
                     b.Property<long>("EntityId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("PizzaEntityId")
                         .HasColumnType("bigint");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.HasKey("EntityId");
 
@@ -231,19 +231,19 @@ namespace PizzaBox.Storage.Migrations
                         {
                             EntityId = 1L,
                             Name = "Cheese",
-                            Price = 0.2f
+                            Price = 0.20000000000000001
                         },
                         new
                         {
                             EntityId = 2L,
                             Name = "Tomato",
-                            Price = 0.1f
+                            Price = 0.10000000000000001
                         },
                         new
                         {
                             EntityId = 3L,
                             Name = "Pepperoni",
-                            Price = 0.3f
+                            Price = 0.29999999999999999
                         });
                 });
 

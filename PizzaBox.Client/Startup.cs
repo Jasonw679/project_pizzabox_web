@@ -30,14 +30,14 @@ namespace PizzaBox.Client
       services.AddDbContext<PizzaBoxContext>(option =>
       {
 
-        if (string.IsNullOrWhiteSpace(Configuation.GetConnectionString("mssql")))
-        {
-          option.UseNpgsql(Configuation.GetConnectionString("mssql"), ops => ops.EnableRetryOnFailure(3));
-        }
-        else
-        {
-          option.UseNpgsql(Configuation.GetConnectionString("pgsql"), ops => ops.EnableRetryOnFailure(3));
-        }
+        //if (string.IsNullOrWhiteSpace(Configuation.GetConnectionString("mssql")))
+        //{
+        option.UseSqlServer(Configuation.GetConnectionString("mssql"), ops => ops.EnableRetryOnFailure(3));
+        //}
+        //else
+        //{
+        //option.UseNpgsql(Configuation.GetConnectionString("pgsql"), ops => ops.EnableRetryOnFailure(3));
+        //}
       });
     }
 

@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using PizzaBox.Domain.Abstracts;
 using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Storing
