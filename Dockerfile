@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk as base
 
 WORKDIR /app
-COPY <physical> <virtual>
+COPY . .
 RUN dotnet build
 RUN dotnet publish --configuation Debug -p PizzaBox.Client -o out PizzaBox.Client
 
