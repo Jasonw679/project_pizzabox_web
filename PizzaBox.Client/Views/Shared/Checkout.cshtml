@@ -1,4 +1,4 @@
-<h2>Thank you for a Order</h2>
+<h2>Your Order has Place</h2>
 <p>Store: @ViewBag.Order.Store</p>
 @foreach (var pizza in ViewBag.Order.Pizzas)
 {
@@ -12,5 +12,6 @@
       <li>@topping</li>
     }
   </ul>
+  <p>Total Price: @pizza.Price</p>
 }
 <a href="/home">Home</a>
