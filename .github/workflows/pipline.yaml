@@ -4,7 +4,7 @@ jobs:
     steps:
       - uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
 
 name: ci-pipeline
 on: push
